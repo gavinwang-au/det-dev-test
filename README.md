@@ -55,4 +55,4 @@ The project should include a `README.md` file which explains how to install and 
 
 Please send a link to the Git repository containing your solution for this project to:
 
-COR0916ITInfraservPlatformMonitoring@det.nsw.edu.au
+nick.mitchell3@det.nsw.edu.au
