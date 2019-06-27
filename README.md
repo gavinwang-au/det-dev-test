@@ -1,4 +1,5 @@
 # NodeJS Workout of the Day #
+Please fork this project before starting 
 
 This workout is designed to give you a feel for the type of work you will be undertaking, as well as test your knowledge
 of creating backend API's that interact with Elasticsearch.
@@ -50,6 +51,16 @@ The project should include a `README.md` file which explains how to install and 
             }
         ]
     }
+
+## Focal Points ##
+* Tests - unit and e2e
+* commit history and branching
+* Docker compose - where possible
+* Readme updated with architecture and exact instructions on running 
+* package - version and commands to run, test, set environments ect 
+* DevOps - Deployed to the cloud somehwere, preferably via a CICD pipeline (like Travis or anything I can see) 
+* PM - Use the Project board in Github if possible or Trello if you prefer
+* Documentation - please update the readme, doccomments, swagger docs
 
 ## Submissions ##
 
