@@ -41,7 +41,7 @@ Please make sure you have node.js 10.9 or later installed.
 
 - The [Tsoa](https://www.npmjs.com/package/tsoa) module is used to generate routes and the swagger spec (swagger.json) based on decorated controllers.
   1. Rely on TypeScript type annotations to generate API metadata.
-  2. Support Dependency injection or IOC [InversifyJS](https://github.com/inversify/InversifyJS)
+  2. Support Dependency injection or IOC with [InversifyJS](https://github.com/inversify/InversifyJS)
 - The [Swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) module is used to serve auto-generated swagger docs from express, based on the generated swagger.json file.
 
 - The [Heroku](https://www.heroku.com/) is used for cloud hosting
