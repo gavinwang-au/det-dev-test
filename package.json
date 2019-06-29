@@ -14,7 +14,7 @@
     "test:unit": "npm run env:test nyc mocha --timeout 10000 -r ts-node/register ./src/tests/unit/**/*.spec.ts",
     "test:coverage": "npm run test:unit && google-chrome ./coverage/index.html",
     "prestart": "npm run build",
-    "start": "npm run start:dev",
+    "start": "npm run start:prod",
     "start:dev": "npm run build:tsoa && npm run env:dev ts-node-dev --respawn ./src",
     "start:prod": "npm run env:prod node ./dist/src/index.js",
     "build:routes": "tsoa routes",
