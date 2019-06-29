@@ -16,8 +16,8 @@ To create a NodeJS application to serve an API that exposes the elasticsearch da
 ### Implementation
 
 ##### Live Demo
-* [Online Demo on Cloud](https://det-dev-test.herokuapp.com/api/v1/history?startDate=2019-02-11&endDate=2019-02-12)
-* [Swagger API Docs on Cloud](https://det-dev-test.herokuapp.com/api-docs/#/history/Search)
+* [Online Demo](https://det-dev-test.herokuapp.com/api/v1/history?startDate=2019-02-11&endDate=2019-02-12)
+* [Online Swagger API](https://det-dev-test.herokuapp.com/api-docs/#/history/Search)
 
 - It might take 10 seconds to activate the heroku free dynos, please kindly wait 10 seconds.
 
