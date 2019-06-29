@@ -4,7 +4,7 @@
   "description": "NodeJS Workout of the Day",
   "author": "Gavin Wang",
   "license": "ISC",
-  "main": "",
+  "main": "./dist/src/index.js",
   "pre-commit": [
     "lint",
     "test:unit"
@@ -13,6 +13,7 @@
     "test": "npm run lint && npm run test:unit",
     "test:unit": "npm run env:test nyc mocha --timeout 10000 -r ts-node/register ./src/tests/unit/**/*.spec.ts",
     "test:coverage": "npm run test:unit && google-chrome ./coverage/index.html",
+    "prestart": "npm run build",
     "start": "npm run start:dev",
     "start:dev": "npm run build:tsoa && npm run env:dev ts-node-dev --respawn ./src",
     "start:prod": "npm run env:prod node ./dist/src/index.js",
