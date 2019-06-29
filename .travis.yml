@@ -7,7 +7,7 @@ services:
   - docker
 
 before_install:
-  - npm i -g mocha nyc swagger
+  - npm i -g swagger
   # install heroku CLI
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   # login to docker registries (dockerhub + heroku)
@@ -19,16 +19,16 @@ install:
 
 script: 
   - npm run test
-  # - npm build
+  - npm run build:prod
   # build docker images
   - docker build -t gavinwangoz/det-dev-test .
-  - docker tag gavinwangoz/movie-collection registry.heroku.com/$HEROKU_APP_NAME/web
+  - docker tag gavinwangoz/det-dev-test registry.heroku.com/$HEROKU_APP_NAME/web
 
 deploy:
   provider: script
   script:
     # push to dockerhub & heroku
-    # docker push gavinwangoz/movie-collection
+    # docker push gavinwangoz/det-dev-test
     docker push registry.heroku.com/$HEROKU_APP_NAME/web
     heroku container:release web --app $HEROKU_APP_NAME
   on:
