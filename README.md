@@ -30,7 +30,7 @@ Please make sure you have node.js 10.9 or later installed.
   
 - Run `npm run test` to execute the tests via Mocha.
 
-- Run `docker-compose up –d` to run for a local test evn.
+- Run `docker-compose up` to run for a local test evn.
 
 - Swagger UI can be accessed through `http://localhost:3030/api-docs`.
 
