@@ -1,0 +1,35 @@
+language: node_js
+
+node_js:
+  - "9"
+
+services:
+  - docker
+
+before_install:
+  - npm i -g mocha nyc swagger
+  # install heroku CLI
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+  # login to docker registries (dockerhub + heroku)
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker login -u $HEROKU_USERNAME -p $HEROKU_PASSWORD registry.heroku.com
+
+install:
+  - npm i 
+
+script: 
+  - npm run test
+  # - npm build
+  # build docker images
+  - docker build -t gavinwangoz/movie-collection .
+  - docker tag gavinwangoz/movie-collection registry.heroku.com/$HEROKU_APP_NAME/web
+
+deploy:
+  provider: script
+  script:
+    # push to dockerhub & heroku
+    # docker push gavinwangoz/movie-collection
+    docker push registry.heroku.com/$HEROKU_APP_NAME/web
+    heroku container:release web --app $HEROKU_APP_NAME
+  on:
+    branch: master
