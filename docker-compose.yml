@@ -1,6 +1,6 @@
 version: "2"
 services:
-  det-dev-test:
+  api:
     build: .
     command: npm start
     volumes:
@@ -15,7 +15,7 @@ services:
     networks:
       - esnet
   elasticsearch:
-    image: elasticsearch
+    image: elasticsearch:6.8.1
     container_name: elasticsearch
     volumes:
       - "data:/usr/share/elasticsearch/data"
@@ -24,7 +24,7 @@ services:
     networks:
       - esnet
   kibana:
-    image: kibana
+    image: kibana:6.8.1
     container_name: kibana
     hostname: kibana
     ports:
