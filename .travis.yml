@@ -21,7 +21,7 @@ script:
   - npm run test
   # - npm build
   # build docker images
-  - docker build -t gavinwangoz/movie-collection .
+  - docker build -t gavinwangoz/det-dev-test .
   - docker tag gavinwangoz/movie-collection registry.heroku.com/$HEROKU_APP_NAME/web
 
 deploy:
