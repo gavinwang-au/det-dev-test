@@ -21,7 +21,7 @@ export class HistoryController extends Controller {
     @Get()
     // tslint:disable-next-line:max-line-length
     public async search(@Query('startDate') startDate: string, @Query('endDate') endDate: string): Promise<IHistoryModel[]> {
-        return await this.service.searchByDate(startDate, endDate);
+        return await this.service.searchWithTypeReturn(startDate, endDate);
     }
 
 }
