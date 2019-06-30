@@ -24,18 +24,18 @@ To create a NodeJS application to serve an API that exposes the elasticsearch da
 ##### Build & Test
 Please make sure you have node.js 10.9 or later installed. 
 
-- Run `git clone https://github.com/gavinwang-au/bus-reports-app.git` clone the project to your local.
+- Run `git clone https://github.com/gavinwang-au/det-dev-test.git` clone the project to your local.
 
 - Run `npm install` to install dependencies.
   
 - Run `npm run test` to execute the tests via Mocha.
 
-- Run `docker-compose up` to run for a local test evn.
+- Run `docker-compose up` to run for a local test evn with 3 docker containers: api, elasticsearch and kibana.
 
-- Swagger UI can be accessed through `http://localhost:3030/api-docs`.
+- Swagger api docs can be accessed through `http://localhost:3030/api-docs`.
 
 ##### Teach Stack Choice & Key Decisions
-- The [Typescript](https://www.typescriptlang.org/) is used within the node.js project.
+- The [Typescript](https://www.typescriptlang.org/) is used within the node.js application.
 
 - The [Express.js](https://expressjs.com/) is used as a http server framework for building the restful API.
 
