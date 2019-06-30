@@ -35,7 +35,7 @@ Please make sure you have node.js 10.9 or later installed.
 - Swagger api docs can be accessed through `http://localhost:3030/api-docs`.
 
 ##### Teach Stack Choice & Key Decisions
-- The [Typescript](https://www.typescriptlang.org/) is used within the node.js application.
+- The [Typescript](https://www.typescriptlang.org/) is used to develop the node.js application.
 
 - The [Express.js](https://expressjs.com/) is used as a http server framework for building the restful API.
 
