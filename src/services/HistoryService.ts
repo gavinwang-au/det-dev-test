@@ -11,19 +11,19 @@ export class HistoryService extends EsBaseService<IHistoryModel> {
     }
 
     public async searchWithTypeReturn(startDate: string, endDate: string): Promise<IHistoryModel[]> {
-        const searchResults = await this.searchByDate(startDate,endDate);
+        const searchResults = await this.searchByDate(startDate, endDate);
         if (Array.isArray(searchResults) && searchResults.length > 0) {
-            return searchResults.map((result)=>{
+            return searchResults.map((result) => {
                 const historyModel = {
-                  sitecode: "",
-                  timestamp: "",
-                  user: ""
+                  sitecode: '',
+                  timestamp: '',
+                  user: ''
                 } as IHistoryModel;
-                Object.keys(historyModel).forEach(key=>historyModel[key]=result[key]);
+                Object.keys(historyModel).forEach(key => historyModel[key] = result[key]);
                 return historyModel;
             });
         }
-        return [] as IHistoryModel[]
+        return [] as IHistoryModel[];
     }
 
 }
