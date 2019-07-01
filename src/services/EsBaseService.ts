@@ -9,7 +9,7 @@ export abstract class EsBaseService<EntityModel> {
     public async searchByDate(startDate: string, endDate: string): Promise<EntityModel[]> {
         if (this.isValidDate(startDate) && this.isValidDate(endDate)) {
             const searchQuery = this.toElasticSearchQuery(startDate, endDate);
-            if(this.repository) {
+            if (this.repository) {
                 const isReady: boolean = await this.repository.check();
                 Logger.log('elasticSearchService is ready:' + isReady);
                 if (isReady === true) {
