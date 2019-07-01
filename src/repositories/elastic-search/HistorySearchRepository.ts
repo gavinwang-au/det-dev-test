@@ -9,7 +9,6 @@ export class HistorySearchRepository extends EsBaseRepository<IHistoryModel> {
 
     constructor(@inject(ElasticSearchConnection) protected esConnection: ElasticSearchConnection) {
         super();
-        super.init();
     }
 
 }

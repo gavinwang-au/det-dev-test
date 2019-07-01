@@ -1,4 +1,4 @@
-import { IEsBaseRepository } from '../../../repositories/IEsBaseRepository';
+import { IEsBaseRepository } from '../../../repositories/elastic-search/IEsBaseRepository';
 
 export class MockEsBaseRepository implements IEsBaseRepository<any> {
     constructor(public mock?: any) { }

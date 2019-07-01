@@ -1,4 +1,4 @@
-import { IEsBaseRepository } from '../IEsBaseRepository';
+import { IEsBaseRepository } from './IEsBaseRepository';
 import { Logger } from '../../config/Logger';
 import { ElasticSearchConnection } from '../../config/ElasticSearchConnection';
 import { decorate, injectable } from 'inversify';
@@ -7,27 +7,25 @@ import { SearchResponse } from 'elasticsearch';
 
 export abstract class EsBaseRepository<EntityType> implements IEsBaseRepository<EntityType> {
     protected esConnection: ElasticSearchConnection;
-    private initiated: boolean = false;
-
-    /** this needs to be called after the extended class super is executed */
-    protected init(): void {
-        if (this.initiated) return;
-        this.initiated = true;
-    }
 
     public check(): Promise<boolean> {
         return new Promise((done, fail) => {
-            this.esConnection.client.ping({
-                requestTimeout: 30000,
-            }, (error) => {
-                if (error) {
-                    Logger.error('elasticsearch cluster is down!', {err: error});
-                    fail(false); // ('elasticsearch cluster is down!', {err:error});
-                } else {
-                    Logger.log('All is well');
-                    done(true);
-                }
-            });
+            if (this.esConnection) {
+                this.esConnection.client.ping({
+                    requestTimeout: 30000,
+                }, (error) => {
+                    if (error) {
+                        Logger.error('ElasticSearch cluster is down!', {err: error});
+                        fail(false);
+                    } else {
+                        Logger.log('All is well');
+                        done(true);
+                    }
+                });
+            } else {
+                Logger.error('can not get ElasticSearch connection!');
+                fail(false);
+            }
         });
     }
 
